@@ -1,5 +1,5 @@
 #№1. download
-python -m my_env ./my_env #создать виртуальное окружение в папку 
+python -m venv ./my_env #создать виртуальное окружение в папку 
 . ./my_env/bin/activate   #активировать виртуальное окружение
 pip install -r requirements.txt    #установить пакеты python
 python download.py    #запустить python script
