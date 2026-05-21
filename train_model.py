@@ -1,3 +1,4 @@
+import pickle
 import numpy as np
 import polars as pl
 from typing import Any
@@ -13,7 +14,7 @@ def train_and_estimate(X_train, y_train, X_test, y_test, model, metric_func, par
     y_pred = model.predict(X_test)
     metric = metric_func(y_test, y_pred)
     
-    return metric
+    return model, metric
 
 
 if __name__ == "__main__":
@@ -24,5 +25,8 @@ if __name__ == "__main__":
     X_test = pl.read_csv(X_TEST_PATH)
     y_test = pl.read_csv(Y_TEST_PATH)
 
-    metric_value = train_and_estimate(X_train, y_train, X_test, y_test, MODEL, METRIC_FUNC, params={})
+    model, metric_value = train_and_estimate(X_train, y_train, X_test, y_test, MODEL, METRIC_FUNC, params={})
     print(f"model: {MODEL.__name__}, metric: {METRIC_FUNC.__name__} {metric_value}")
+    
+    with open(MODEL_SAVE_PATH, "wb") as f:
+        pickle.dump(model, f)

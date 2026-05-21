@@ -19,3 +19,5 @@ Y_TRAIN_PATH = DATA_FOLDER + "y_train.csv"
 Y_TEST_PATH = DATA_FOLDER + "y_test.csv"
 MODEL = GradientBoostingRegressor
 METRIC_FUNC = r2_score
+
+MODEL_SAVE_PATH = "./model/model.pkl"

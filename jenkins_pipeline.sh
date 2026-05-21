@@ -6,8 +6,10 @@ python3 download.py    #запустить python3 script
 #-----------------------
 
 #№2. train_model 
-echo "Start train model"
+python3 -m venv ./my_env #создать виртуальное окружение в папку 
 . ./my_env/bin/activate   #активировать виртуальное окружение
+pip3 install -r requirements.txt    #установить пакеты python3
+echo "Start train model"
 python3 train_model.py > logs.txt
 #------------------------
 
