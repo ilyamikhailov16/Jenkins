@@ -1,14 +1,14 @@
 #№1. download
-python -m venv ./my_env #создать виртуальное окружение в папку 
+python3 -m venv ./my_env #создать виртуальное окружение в папку 
 . ./my_env/bin/activate   #активировать виртуальное окружение
-pip install -r requirements.txt    #установить пакеты python
-python download.py    #запустить python script
+pip3 install -r requirements.txt    #установить пакеты python3
+python3 download.py    #запустить python3 script
 #-----------------------
 
 #№2. train_model 
 echo "Start train model"
 . ./my_env/bin/activate   #активировать виртуальное окружение
-python train_model.py > logs.txt
+python3 train_model.py > logs.txt
 #------------------------
 
 # #3. deploy 
